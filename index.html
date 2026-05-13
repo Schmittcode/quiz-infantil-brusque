@@ -66,25 +66,80 @@
       <!-- inicio quiz -->
 
       <section id="tela-quiz">
-        <div id="placar">PERGUNTA 1 DE 15</div>
+        <div id="topo-quiz">
+          <div id="placa-pergunta">
+            <img
+              src="./assets/img-tela-quiz/img_placa.png"
+              alt="Placa de Pergunta"
+              class="img-placa"
+            />
+            <span class="texto-placa">PERGUNTA 1 DE 15</span>
+          </div>
 
-        <div id="barra-fundo">
-          <div id="barra-progresso"></div>
+          <div id="container-progresso">
+            <div id="barra-fundo">
+              <div id="barra-progresso"></div>
+            </div>
+            <img
+              src="./assets/img-tela-quiz/trofeu.png"
+              alt="Troféu"
+              id="icone-trofeu"
+            />
+          </div>
+
+          <button id="btn-som-quiz" type="button">
+            <img src="./assets/music/icon music.png" alt="Liga/Desliga Som" />
+          </button>
         </div>
 
-        <h2 id="pergunta">
-          Qual é o animalzinho que dá nome à festa mais famosa de Brusque, a
-          Fenarreco?
-        </h2>
+        <div id="container-quadro-quiz">
+          <img
+            src="./assets/img-tela-quiz/quadro_fundo.png"
+            alt="Quadro de Fundo"
+            class="img-quadro-madeira"
+          />
 
-        <div id="opcoes">
-          <button class="opcao">leao</button>
-          <button class="opcao">Vaca</button>
-          <button class="opcao">Marreco</button>
-          <button class="opcao">Pato</button>
+          <div id="conteudo-quiz-interno">
+            <div class="header-pergunta">
+              <h2 id="pergunta">
+                1. Qual é o animalzinho que dá nome à festa mais famosa de
+                Brusque, a Fenarreco?
+              </h2>
+            </div>
+
+            <div id="opcoes">
+              <button class="opcao" id="opt-1"type="button">
+                <img
+                  src="./assets/img-tela-quiz/pergunta_1/imgLeao.png"
+                  alt="Leão"
+                />
+              </button>
+              <button class="opcao" id="opt-2" type="button">
+                <img
+                  src="./assets/img-tela-quiz/pergunta_1/imgVaca.png"
+                  alt="Vaca"
+                />
+              </button>
+              <button class="opcao" id="opt-3" type="button">
+                <img
+                  src="./assets/img-tela-quiz/pergunta_1/imgMarreco.png"
+                  alt="Marreco"
+                />
+              </button>
+              <button class="opcao" id="opt-4" type="button">
+                <img
+                  src="./assets/img-tela-quiz/pergunta_1/imgPato.png"
+                  alt="Pato"
+                />
+              </button>
+            </div>
+          </div>
         </div>
 
-        <button type="button">PRÓXIMO</button>
+        <button id="btn-proximo" type="button">
+          PRÓXIMO
+          <img src="./assets/img-tela-quiz/btn_proximo.png" alt="Próximo" />
+        </button>
       </section>
     </main>
   </body>
