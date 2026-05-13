@@ -7,20 +7,84 @@
   </head>
   <body>
     <main>
-      <section id="tela-inicio">
-        <h1>Aventuras em Brusque</h1>
-        <input type="text" placeholder="Digite seu Nome" />
-        <input type="text" placeholder="Escola" />
+      <!-- audio de fundo -->
 
-        <div id="selecao-idade">
-          <span>Idade:</span>
-          <button type="button">4</button>
-          <button type="button">5</button>
-          <button type="button">6</button>
+      <audio id="musica-fundo" loop>
+        <source src="./assets/music/background-audio.mpeg" type="audio/mpeg" />
+      </audio>
+
+      <!-- tela inicial -->
+
+      <section id="tela-inicio">
+        <div id="controles-superiores">
+          <button id="btn-som" type="button">
+            <img src="./assets/music/icon music.png" alt="Liga/Desliga Som" />
+          </button>
         </div>
 
-        <button id="btn-jogar">JOGAR</button>
-        
+        <h1>Aventuras em Brusque</h1>
+
+        <form id="form-inicial">
+          <div class="container-campo-entrada">
+            <div class="campo-entrada">
+              <img src="./assets/img-tela-inicial/lapes icon.png" alt="Lápis" />
+              <input
+                type="text"
+                id="nome-aluno"
+                placeholder="Nome"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <div class="campo-entrada">
+              <img
+                src="./assets/img-tela-inicial/escola icon.png"
+                alt="Escola"
+              />
+              <input
+                type="text"
+                id="escola"
+                placeholder="Escola"
+                autocomplete="off"
+                required
+              />
+            </div>
+          </div>
+          <div id="selecao-idade">
+            <span>Idade:</span>
+            <button type="button" class="btn-idade" required>4</button>
+            <button type="button" class="btn-idade" required>5</button>
+            <button type="button" class="btn-idade" required>6</button>
+          </div>
+          <button id="btn-jogar" type="submit">
+            <img src="./assets/img-tela-inicial/btn_play.png" alt="Play" />
+            <span>Jogar</span>
+          </button>
+        </form>
+      </section>
+
+      <!-- inicio quiz -->
+
+      <section id="tela-quiz">
+        <div id="placar">PERGUNTA 1 DE 15</div>
+
+        <div id="barra-fundo">
+          <div id="barra-progresso"></div>
+        </div>
+
+        <h2 id="pergunta">
+          Qual é o animalzinho que dá nome à festa mais famosa de Brusque, a
+          Fenarreco?
+        </h2>
+
+        <div id="opcoes">
+          <button class="opcao">leao</button>
+          <button class="opcao">Vaca</button>
+          <button class="opcao">Marreco</button>
+          <button class="opcao">Pato</button>
+        </div>
+
+        <button type="button">PRÓXIMO</button>
       </section>
     </main>
   </body>
