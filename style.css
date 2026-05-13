@@ -1,0 +1,24 @@
+#tela-inicio {
+  background-image: url("./assets/img-tela-inicial/background_Inicio.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: auto;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .conteiner {
+  display: flex;
+  flex-direction: column;
+}
+
+#btn-jogar {
+  position: absolute;
+  top: 50px;
+  right: 50%;
+  z-index: 10;
+} */
