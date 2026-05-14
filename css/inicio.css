@@ -1,0 +1,154 @@
+#tela-inicio {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/img-tela-inicial/background_Inicio.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+#tela-inicio h1 {
+  display: none;
+}
+
+#form-inicial {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container-campo-entrada {
+  position: absolute;
+  bottom: 60px;
+  left: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#selecao-idade {
+  position: absolute;
+  bottom: 70px;
+  right: 150px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #5d4037;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.campo-entrada {
+  background-color: #ebd9c5;
+  border: 3px solid #8b4513;
+  border-radius: 50px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  width: 380px;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.campo-entrada img {
+  width: 40px;
+  height: auto;
+}
+
+.campo-entrada input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  margin-left: 15px;
+  width: 100%;
+  color: #8b4513;
+}
+
+.btn-idade {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 3px solid white;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: #3498db;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-idade:hover {
+  background-color: #2ecc71;
+  transform: scale(1.2);
+}
+
+#btn-jogar {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 450px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+#btn-jogar span {
+  display: block;
+  color: #5d4037;
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Comic Sans MS", sans-serif;
+  pointer-events: none;
+  transition: none !important;
+}
+
+#btn-jogar img {
+  width: 170px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+#btn-jogar:hover img {
+  transform: translateX(-50%) scale(1.2);
+}
+
+#controles-superiores {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 10;
+}
+
+#btn-som {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#btn-som img {
+  width: 45px;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+#btn-som:hover img {
+  transform: scale(1.2);
+}
