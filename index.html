@@ -66,7 +66,7 @@
 
       <!-- inicio quiz -->
 
-      <section id="tela-quiz">
+      <section id="tela-quiz" style="display: none;">
         <div id="topo-quiz">
           <div id="placa-pergunta">
             <img
@@ -109,29 +109,37 @@
             </div>
 
             <div id="opcoes">
-              <button class="opcao" id="opt-1"type="button">
+              <button class="opcao" id="opt-1" type="button">
                 <img
                   src="./assets/img-tela-quiz/pergunta_1/imgLeao.png"
                   alt="Leão"
                 />
+                <img src="./assets/img-feedback/V_correto.png" class="feedback-icon icone-v" style="display: none;">
+                <img src="./assets/img-feedback/X_erro.png" class="feedback-icon icone-x" style="display: none;">
               </button>
               <button class="opcao" id="opt-2" type="button">
                 <img
                   src="./assets/img-tela-quiz/pergunta_1/imgVaca.png"
                   alt="Vaca"
                 />
+                <img src="./assets/img-feedback/V_correto.png" class="feedback-icon icone-v" style="display: none;">
+                <img src="./assets/img-feedback/X_erro.png" class="feedback-icon icone-x" style="display: none;">
               </button>
               <button class="opcao" id="opt-3" type="button">
                 <img
                   src="./assets/img-tela-quiz/pergunta_1/imgMarreco.png"
                   alt="Marreco"
                 />
+                <img src="./assets/img-feedback/V_correto.png" class="feedback-icon icone-v" style="display: none;">
+                <img src="./assets/img-feedback/X_erro.png" class="feedback-icon icone-x" style="display: none;">
               </button>
               <button class="opcao" id="opt-4" type="button">
                 <img
                   src="./assets/img-tela-quiz/pergunta_1/imgPato.png"
                   alt="Pato"
                 />
+                <img src="./assets/img-feedback/V_correto.png" class="feedback-icon icone-v" style="display: none;">
+                <img src="./assets/img-feedback/X_erro.png" class="feedback-icon icone-x" style="display: none;">
               </button>
             </div>
           </div>
@@ -142,6 +150,43 @@
           <img src="./assets/img-tela-quiz/btn_proximo.png" alt="Próximo" />
         </button>
       </section>
+
+      <!-- tela resultados -->
+
+      <section id="tela-resultado" style="display: none;">
+        <div id="container-vitoria">
+          <h1 id="titulo-vitoria">PARABÉNS, CAMPEÃO!</h1>
+
+          <img
+            src="./assets/img-tela-resultado/trofeu_grande.png"
+            alt="Troféu Sorridente"
+          />
+          <div id="base-pedra">
+            <img
+              src="./assets/img-tela-resultado/pedra_fundo.png"
+              alt="Base de Pedra"
+            />
+
+            <div class="texto-resultado">
+              <p>VOCÊ ACERTOU</p>
+              <h2 id="pontuacao-final">15 de 15 PERGUNTAS</h2>
+            </div>
+            <button
+              id="btn-menu-principal"
+              type="button"
+              onclick="location.reload()"
+            >
+              <img
+                src="./assets/img-tela-resultado/icone_casa.png"
+                alt="Início"
+              />
+              <span>Menu Principal</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <audio id="audio-player"></audio>
     </main>
   </body>
 </html>
