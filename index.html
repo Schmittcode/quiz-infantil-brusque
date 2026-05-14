@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/img-tela-quiz/trofeu.png" type="image/x-icon">
     <title>Quiz Brusque - Infantil</title>
     <link rel="stylesheet" href="./css/geral.css" />
     <link rel="stylesheet" href="./css/inicio.css" />
@@ -13,7 +14,7 @@
     <main>
       <!-- audio de fundo -->
 
-      <audio id="musica-fundo" loop>
+      <audio id="musica-fundo" loop autoplay>
         <source src="./assets/music/background-audio.mpeg" type="audio/mpeg" />
       </audio>
 
@@ -56,11 +57,11 @@
           </div>
           <div id="selecao-idade">
             <span>Idade:</span>
-            <button type="button" class="btn-idade" required>4</button>
-            <button type="button" class="btn-idade" required>5</button>
-            <button type="button" class="btn-idade" required>6</button>
+            <button type="button" class="btn-idade">4</button>
+            <button type="button" class="btn-idade">5</button>
+            <button type="button" class="btn-idade">6</button>
           </div>
-          <button id="btn-jogar" type="submit">
+          <button id="btn-jogar" type="button">
             <img src="./assets/img-tela-inicial/btn_play.png" alt="Play" />
             <span>Jogar</span>
           </button>
@@ -223,5 +224,6 @@
 
       <audio id="audio-player"></audio>
     </main>
+    <script src="./js/script.js"></script>
   </body>
 </html>
