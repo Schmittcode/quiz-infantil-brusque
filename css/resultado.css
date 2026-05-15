@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700;900&display=swap");
+
+/* Reset para garantir que não haja espaços sobrando */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#tela-resultado {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Mantém os itens na base */
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative; /* Necessário para o fundo desfocado funcionar */
+  overflow: hidden; /* Corta o que passar do fundo da tela e evita barras de rolagem */
+  font-family: "Fredoka", "Arial", sans-serif !important;
+}
+
+/* CRIANDO O FUNDO DESFOCADO SEPARADO DO CONTEÚDO */
+#tela-resultado::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/img-tela-resultado/tela_resuldo_final.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(3px);
+  z-index: -1; /* Joga a imagem para trás do conteúdo */
+  transform: scale(
+    1.05
+  ); /* Aumenta a imagem um pouquinho para as bordas não ficarem brancas por causa do desfoque */
+}
+
+#container-vitoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  max-width: 800px;
+  position: relative;
+  margin-bottom: -5vh; /* Ajuste para -8vh ou -10vh se quiser descer ainda MAIS */
+  z-index: 1; /* Garante que os itens fiquem na frente do fundo */
+}
+
+/* Título igual ao Figma */
+#titulo-vitoria {
+  color: #ffd700;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Fredoka", "Arial", sans-serif !important;
+  text-align: center;
+  /* -webkit-text-stroke: 2px #8b4513; */
+  /* filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.3)); */
+  text-shadow:
+    -2px -2px 0 #8b4513,
+    2px -2px 0 #8b4513,
+    -2px 2px 0 #8b4513,
+    2px 2px 0 #8b4513,
+    0px -2px 0 #8b4513,
+    0px 2px 0 #8b4513,
+    -2px 0px 0 #8b4513,
+    2px 0px 0 #8b4513,
+    2px 4px 2px rgba(0, 0, 0, 0.3); /* Sombra original no final */
+  margin-bottom: 30px;
+}
+
+/* Troféu */
+#container-vitoria > img {
+  width: 700px;
+  height: auto;
+  z-index: 10;
+  margin-bottom: -220px;
+}
+
+/* Base da Pedra */
+#base-pedra {
+  position: relative;
+  width: 140%;
+  display: flex;
+  justify-content: center;
+}
+
+#base-pedra > img {
+  width: 100%;
+  display: block;
+}
+
+/* Texto SOBRE a pedra */
+.texto-resultado {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.texto-resultado p {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0;
+  /* -webkit-text-stroke: 1px #8b4513; */
+  /* filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.3)); */
+  font-family: "Fredoka", "Arial", sans-serif !important;
+  text-shadow:
+    -2px -2px 0 #8b4513,
+    2px -2px 0 #8b4513,
+    -2px 2px 0 #8b4513,
+    2px 2px 0 #8b4513,
+    0px -2px 0 #8b4513,
+    0px 2px 0 #8b4513,
+    -2px 0px 0 #8b4513,
+    2px 0px 0 #8b4513,
+    2px 4px 2px rgba(0, 0, 0, 0.3); /* Sombra original no final */
+  margin-top: -40px;
+}
+
+#pontuacao-final {
+  font-size: 3.2rem;
+  font-weight: 900;
+  /* -webkit-text-stroke: 1px #8b4513; */
+  /* filter: drop-shadow(2px 4px 2px rgba(0, 0, 0, 0.3)); */
+  font-family: "Fredoka", "Arial", sans-serif !important;
+  text-shadow:
+    -2px -2px 0 #8b4513,
+    2px -2px 0 #8b4513,
+    -2px 2px 0 #8b4513,
+    2px 2px 0 #8b4513,
+    0px -2px 0 #8b4513,
+    0px 2px 0 #8b4513,
+    -2px 0px 0 #8b4513,
+    2px 0px 0 #8b4513,
+    2px 4px 2px rgba(0, 0, 0, 0.3); /* Sombra original no final */
+}
+
+/* Botão Quadrado Bege do Figma */
+#btn-menu-principal {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 180px;
+  height: 180px;
+  background-color: #f5e6d3;
+  border: 5px solid #d2b48c;
+  border-radius: 25px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: transform 0.2s;
+}
+
+#btn-menu-principal:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+#btn-menu-principal img {
+  width: 80px;
+  height: auto;
+}
+
+#btn-menu-principal span {
+  color: #8b4513;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  text-align: center;
+}
