@@ -1,0 +1,288 @@
+/* --- CONFIGURAÇÃO GERAL DA TELA --- */
+#tela-quiz {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+}
+
+/* Camada de fundo com desfoque (blur) para destacar o quiz */
+#tela-quiz::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/img-tela-quiz/backgorund_perguntas.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px); /* Intensidade do desfoque */
+  transform: scale(1.1); /* Evita bordas brancas causadas pelo blur */
+  z-index: -1;
+}
+
+/* --- TOPO (PLACA, PROGRESSO E SOM) --- */
+#topo-quiz {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  z-index: 10;
+}
+
+#placa-pergunta {
+  position: relative;
+  width: 210px;
+  margin-top: -20px; /* Leve ajuste para alinhar visualmente com a barra */
+}
+
+.img-placa {
+  width: 100%;
+}
+
+.texto-placa {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 80%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#container-progresso {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 40px;
+}
+
+#barra-fundo {
+  width: 320px;
+  height: 28px;
+  background: #8b5a2b;
+  border: 4px solid #5d3a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5); /* Efeito de profundidade */
+}
+
+#barra-progresso {
+  width: 10%;
+  height: 100%;
+  background: #11e00a; /* Verde vibrante do progresso */
+  border-radius: 15px;
+}
+
+#icone-trofeu {
+  position: absolute;
+  right: -30px; /* Troféu posicionado para fora da barra */
+  width: 85px;
+  z-index: 5;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+#btn-som-quiz {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#btn-som-quiz img {
+  width: 32px;
+}
+
+/* --- QUADRO CENTRAL --- */
+#container-quadro-quiz {
+  position: relative;
+  width: 85%;
+  max-width: 1000px;
+  margin-top: -30px;
+}
+
+.img-quadro-madeira {
+  width: 100%;
+  display: block;
+}
+
+/* Área útil interna do quadro (onde ficam pergunta e opções) */
+#conteudo-quiz-interno {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%; /* Encaixe lateral ideal */
+  height: 50%; /* Encaixe vertical ideal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-pergunta {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Branco levemente transparente */
+  border: 3px solid #d3a17e; /* Borda acompanhando o tom da madeira */
+  border-radius: 15px;
+  padding: 15px 25px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Espaço entre a pergunta e os animais */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -40px;
+}
+
+#pergunta {
+  font-size: 1.45rem;
+  color: #4b2c20;
+  text-align: center;
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* --- GRID DE RESPOSTAS (ANIMAIS) --- */
+#opcoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  margin-left: -40px;
+}
+
+.opcao {
+  background: white;
+  border: 2px solid #d3a17e;
+  border-radius: 15px;
+  padding: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opcao:hover {
+  transform: scale(1.05);
+  border-color: #00c853;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.opcao img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Ícones de Certo/Errado (Feedback) */
+.feedback-icon {
+  position: absolute;
+  width: 60px !important;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* --- BOTÃO PRÓXIMO (USANDO IMAGEM DO FIGMA) --- */
+#btn-proximo {
+  position: absolute;
+  bottom: 5vh;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 20;
+  font-size: 0; /* Oculta o texto do HTML para priorizar a imagem */
+  color: transparent;
+}
+
+#btn-proximo img {
+  width: 280px;
+  height: auto;
+  display: block;
+}
+
+#btn-proximo:active {
+  transform: scale(0.95); /* Efeito de clique */
+}
+
+/* --- AJUSTES PARA TELAS MENORES (MOBILE) --- */
+@media (max-width: 900px) {
+  #opcoes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #pergunta {
+    font-size: 1.1rem;
+  }
+  #container-quadro-quiz {
+    width: 95%;
+  }
+  #barra-fundo {
+    width: 200px;
+  }
+}
+
+/* --- SISTEMA DE FEEDBACK COM IMAGENS --- */
+
+/* Esconde os ícones por padrão */
+.feedback-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Começa invisível e pequeno */
+  width: 80px !important; /* Tamanho do ícone sobre o animal */
+  z-index: 10;
+  pointer-events: none; /* Garante que o ícone não atrapalhe cliques */
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Quando o JS adicionar a classe 'correta' ao botão */
+.opcao.correta {
+  border: 4px solid #00c853 !important;
+  background-color: #e8f5e9 !important;
+}
+
+.opcao.correta .icone-v {
+  display: block !important;
+  transform: translate(-50%, -50%) scale(1); /* Faz o 'V' aparecer com efeito de pulo */
+}
+
+/* Quando o JS adicionar a classe 'errada' ao botão */
+.opcao.errada {
+  border: 4px solid #ff5252 !important;
+  background-color: #ffebee !important;
+}
+
+.opcao.errada .icone-x {
+  display: block !important;
+  transform: translate(-50%, -50%) scale(1); /* Faz o 'X' aparecer com efeito de pulo */
+}
+
+/* Efeito para quando o botão está desativado (pós-resposta) */
+.opcao:disabled {
+  cursor: default;
+  filter: brightness(0.9);
+}

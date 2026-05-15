@@ -1,40 +1,73 @@
+/* --- CONTAINER PRINCIPAL DA TELA INICIAL --- */
 #tela-inicio {
   width: 100vw;
   height: 100vh;
   background-image: url("../assets/img-tela-inicial/background_Inicio.png");
-  background-size: cover;
+  background-size: cover; /* Faz a imagem cobrir a tela toda sem sobrar espaço */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; /* Evita barras de rolagem indesejadas */
   position: relative;
 }
 
+/* Esconde o título principal (geralmente usado apenas para SEO) */
 #tela-inicio h1 {
   display: none;
 }
 
+/* Área que envolve todos os elementos de formulário (inputs e botões) */
 #form-inicial {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
+/* --- CAMPO DE ENTRADA (NOME DO JOGADOR) --- */
 .container-campo-entrada {
   position: absolute;
-  bottom: 60px;
+  bottom: 60px; /* Posiciona no rodapé à esquerda */
   left: 150px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
+/* Estilização da "caixinha" onde o usuário digita */
+.campo-entrada {
+  background-color: #ebd9c5; /* Tom bege para combinar com o tema */
+  border: 3px solid #8b4513; /* Borda marrom cor de madeira */
+  border-radius: 50px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  width: 380px;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.1); /* Sombra leve no fundo */
+}
+
+.campo-entrada img {
+  width: 40px;
+  height: auto;
+}
+
+/* Estilo do texto dentro do campo de digitação */
+.campo-entrada input {
+  background: transparent;
+  border: none;
+  outline: none; /* Remove aquela borda azul chata ao clicar */
+  font-size: 1.4rem;
+  margin-left: 15px;
+  width: 100%;
+  color: #8b4513;
+}
+
+/* --- SELEÇÃO DE IDADE --- */
 #selecao-idade {
   position: absolute;
-  bottom: 70px;
+  bottom: 70px; /* Posiciona no rodapé à direita */
   right: 150px;
   display: flex;
   align-items: center;
@@ -44,32 +77,7 @@
   font-size: 1.8rem;
 }
 
-.campo-entrada {
-  background-color: #ebd9c5;
-  border: 3px solid #8b4513;
-  border-radius: 50px;
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  width: 380px;
-  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.1);
-}
-
-.campo-entrada img {
-  width: 40px;
-  height: auto;
-}
-
-.campo-entrada input {
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 1.4rem;
-  margin-left: 15px;
-  width: 100%;
-  color: #8b4513;
-}
-
+/* Botões de idade (ex: infantil/juvenil) */
 .btn-idade {
   width: 50px;
   height: 50px;
@@ -84,16 +92,18 @@
   transition: all 0.2s ease-in-out;
 }
 
+/* Efeito ao passar o mouse: muda para verde e aumenta */
 .btn-idade:hover {
   background-color: #2ecc71;
   transform: scale(1.2);
 }
 
+/* --- BOTÃO JOGAR (GRANDE CENTRAL) --- */
 #btn-jogar {
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centralização perfeita no meio da tela */
   width: 350px;
   height: 450px;
   background: transparent;
@@ -102,6 +112,7 @@
   z-index: 5;
 }
 
+/* Texto que fica em cima do botão jogar */
 #btn-jogar span {
   display: block;
   color: #5d4037;
@@ -113,10 +124,10 @@
   left: 50%;
   transform: translateX(-50%);
   font-family: "Comic Sans MS", sans-serif;
-  pointer-events: none;
-  transition: none !important;
+  pointer-events: none; /* O clique passa direto pelo texto para o botão */
 }
 
+/* Imagem que compõe o visual do botão jogar */
 #btn-jogar img {
   width: 170px;
   position: absolute;
@@ -126,10 +137,12 @@
   transition: transform 0.2s ease-in-out;
 }
 
+/* Efeito de aumento na imagem ao passar o mouse */
 #btn-jogar:hover img {
   transform: translateX(-50%) scale(1.2);
 }
 
+/* --- CONTROLES DE ÁUDIO --- */
 #controles-superiores {
   position: absolute;
   top: 25px;
@@ -145,7 +158,6 @@
 
 #btn-som img {
   width: 45px;
-  transform: scale(1);
   transition: transform 0.2s ease-in-out;
 }
 
