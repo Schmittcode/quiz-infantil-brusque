@@ -81,10 +81,11 @@
 }
 
 #barra-progresso {
-  width: 10%;
+  width: 0%;
   height: 100%;
   background: #11e00a; /* Verde vibrante do progresso */
   border-radius: 15px;
+  transition: whidth 0.5s ease-in-out;
 }
 
 #icone-trofeu {

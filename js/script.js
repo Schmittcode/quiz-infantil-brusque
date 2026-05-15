@@ -221,6 +221,13 @@ document.addEventListener("DOMContentLoaded", () => {
         textoPergunta.innerText = dados.titulo;
         textoPlaca.innerText = `PERGUNTA ${perguntaAtual + 1} DE ${listaPerguntas.length}`;
 
+        // --- ATUALIZAÇÃO DA BARRA DE PROGRESSO ---
+    const barraVerde = document.getElementById("barra-progresso");
+    if (barraVerde) {
+        const porcentagem = ((perguntaAtual + 1) / listaPerguntas.length) * 100;
+        barraVerde.style.width = `${porcentagem}%`;
+    }
+
         const alternativasMisturadas = embaralhar([...dados.alternativas]);
 
         narracaoAtual = new Audio(dados.audio);
@@ -278,9 +285,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if(nome === "" || escola === "" || idadeSelecionada === "") {
             alert("Por favor, preencha tudo!");
         } else {
-            embaralhar(listaPerguntas); // Embaralha as perguntas ao começar
+            embaralhar(listaPerguntas);
             telaInicio.style.display = "none";
             telaQuiz.style.display = "flex";
+            telaQuiz.classList.add("fade-in");
+
+            setTimeout(() => {
+                telaQuiz.classList.remove("fade-in")}, 800);
+
             musicaFundo.play();
             renderizarPergunta();
         }
@@ -293,7 +305,37 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
             telaQuiz.style.display = "none";
             telaResultado.style.display = "flex";
+            telaResultado.classList.add("fade-in");
             pontuacaoFinal.innerText = `${acertos} de ${listaPerguntas.length} PERGUNTAS`;
+
+            setTimeout(() => {
+                telaResultado.classList.remove("fade-in");
+            }, 800);
         }
     });
+
+    const btnReiniciar = document.getElementById("btn-menu-principal"); 
+    document.getElementById("barra-progresso-preenchimento").style.width = "0%";
+
+    if(btnReiniciar) {
+        btnReiniciar.addEventListener("click", () => {
+            perguntaAtual = 0;
+            acertos = 0;
+            embaralhar(listaPerguntas);
+            document.getElementById("nome-aluno").value = "";
+            document.getElementById("escola").value = "";
+            telaResultado.style.display = "none";
+            telaInicio.classList.remove("fade-in");
+            telaInicio.style.display = "none";
+            setTimeout(() => {
+                telaInicio.style.display = "flex";
+                telaInicio.classList.add("fade-in");
+            }, 20); 
+
+            
+            setTimeout(() => {
+                telaInicio.classList.remove("fade-in");
+            }, 1000);
+        });
+}
 });

@@ -1,17 +1,21 @@
 /* --- CONTAINER PRINCIPAL DA TELA INICIAL --- */
 #tela-inicio {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../assets/img-tela-inicial/background_Inicio.png");
-  background-size: cover; /* Faz a imagem cobrir a tela toda sem sobrar espaço */
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Evita barras de rolagem indesejadas */
-  position: relative;
+    position: fixed; /* Troque relative por fixed para ela 'ignorar' containers pais */
+    top: 0;
+    left: 0;
+    width: 100vw !important;  /* Força a largura de 100% da janela */
+    height: 100vh !important; /* Força a altura de 100% da janela */
+    
+    background-image: url("../assets/img-tela-inicial/background_Inicio.png");
+    background-size: cover !important; /* O 'cover' agora vai esticar a imagem até o fim do preto */
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99; /* Garante que fique por cima de qualquer fundo preto */
 }
 
 /* Esconde o título principal (geralmente usado apenas para SEO) */
@@ -120,7 +124,7 @@
   font-size: 2.5rem;
   text-transform: uppercase;
   position: absolute;
-  top: 15px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   font-family: "Comic Sans MS", sans-serif;

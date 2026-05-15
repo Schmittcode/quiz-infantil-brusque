@@ -7,32 +7,34 @@
 }
 
 /* --- CORPO DO JOGO --- */
-body {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../assets/img-geral/fundo-jogo.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow: hidden;
+}
 
-  /* Centraliza o conteúdo (as seções) no meio da tela */
+/* Adicione isso para garantir que o MAIN ocupe tudo */
+main {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Esconde barras de rolagem */
-  overflow: hidden;
 }
 
 /* --- ESTRUTURA DAS TELAS --- */
 section {
-  width: 100%;
-  max-width: 1200px;
-  height: 100%;
+  width: 100vw;   /* Ocupa a largura total da visão */
+  height: 100vh;  /* Ocupa a altura total da visão */
+  max-width: none; /* REMOVA o 1200px que estava aqui */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 /* --- AJUSTE DE INTERAÇÃO --- */
