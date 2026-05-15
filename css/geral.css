@@ -1,10 +1,12 @@
+/* --- RESET E TIPOGRAFIA --- */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Evita que padding altere o tamanho fixo dos elementos */
   font-family: "Comic Sans MS", "Verdana", sans-serif;
 }
 
+/* --- CORPO DO JOGO --- */
 body {
   width: 100vw;
   height: 100vh;
@@ -12,12 +14,17 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  /* Centraliza o conteúdo (as seções) no meio da tela */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* Esconde barras de rolagem */
   overflow: hidden;
 }
 
+/* --- ESTRUTURA DAS TELAS --- */
 section {
   width: 100%;
   max-width: 1200px;
@@ -27,6 +34,9 @@ section {
   align-items: center;
   justify-content: center;
 }
+
+/* --- AJUSTE DE INTERAÇÃO --- */
 button img {
+  /* Impede que a imagem interfira no clique do botão */
   pointer-events: none;
 }
