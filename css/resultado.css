@@ -1,41 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700;900&display=swap");
 
-/* Reset para garantir que não haja espaços sobrando */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 #tela-resultado {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Mantém os itens na base */
+  justify-content: center; /* Mudei para center para o troféu não ficar cortado em baixo */
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  position: relative; /* Necessário para o fundo desfocado funcionar */
-  overflow: hidden; /* Corta o que passar do fundo da tela e evita barras de rolagem */
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed; /* Fixed garante que ela cubra o monitor todo por cima de tudo */
+  top: 0;
+  left: 0;
+  overflow: hidden;
   font-family: "Fredoka", "Arial", sans-serif !important;
+  z-index: 100;
 }
 
-/* CRIANDO O FUNDO DESFOCADO SEPARADO DO CONTEÚDO */
+/* O FUNDO DESFOCADO */
 #tela-resultado::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw; /* Força a largura da visão */
+  height: 100vh; /* Força a altura da visão */
   background-image: url("../assets/img-tela-resultado/tela_resuldo_final.jpeg");
   background-size: cover;
   background-position: center;
-
   filter: blur(3px);
-  z-index: -1; /* Joga a imagem para trás do conteúdo */
-  transform: scale(
-    1.05
-  ); /* Aumenta a imagem um pouquinho para as bordas não ficarem brancas por causa do desfoque */
+  z-index: -1;
+  transform: scale(1.1); /* Aumentei um pouquinho mais para garantir */
 }
 
 #container-vitoria {
