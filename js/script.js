@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ================================================================
+    
     // ELEMENTOS DA TELA
-    // ================================================================
+    
     const telaInicio = document.getElementById("tela-inicio");
     const telaQuiz = document.getElementById("tela-quiz");
     const telaResultado = document.getElementById("tela-resultado");
@@ -20,18 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const textoPlaca = document.querySelector(".texto-placa");
     const pontuacaoFinal = document.getElementById("pontuacao-final");
 
-    // ================================================================
     // ESTADO DO JOGO
-    // ================================================================
+    
     let idadeSelecionada = "";
     let perguntaAtual = 0;
     let acertos = 0;
         let narracaoAtual = null;
     musicaFundo.volume = 0.1; 
 
-    // ================================================================
     // BANCO DE PERGUNTAS (Sua lista original)
-    // ================================================================
+    
     const listaPerguntas = [
         {
             titulo: "Qual é o animalzinho que dá nome à festa mais famosa de Brusque, a Fenarreco?",
@@ -185,9 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // ================================================================
     // FUNÇÕES DE LÓGICA
-    // ================================================================
     
     const embaralhar = (lista) => {
         for (let i = lista.length - 1; i > 0; i--) {
@@ -221,7 +217,8 @@ document.addEventListener("DOMContentLoaded", () => {
         textoPergunta.innerText = dados.titulo;
         textoPlaca.innerText = `PERGUNTA ${perguntaAtual + 1} DE ${listaPerguntas.length}`;
 
-        // --- ATUALIZAÇÃO DA BARRA DE PROGRESSO ---
+        // ATUALIZAÇÃO DA BARRA DE PROGRESSO 
+        
     const barraVerde = document.getElementById("barra-progresso");
     if (barraVerde) {
         const porcentagem = ((perguntaAtual + 1) / listaPerguntas.length) * 100;
@@ -263,9 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btnProximo.style.visibility = "visible";
     };
 
-    // ================================================================
     // EVENTOS DE CLIQUE
-    // ================================================================
 
     btnSomInicio.addEventListener("click", (e) => { e.stopPropagation(); alterarSom(); });
     btnSomQuiz.addEventListener("click", (e) => { e.stopPropagation(); alterarSom(); });
